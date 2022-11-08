@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t duypham9895/docker-react -f Dockerfile.dev .
+script:
+  - docker run -e CI=true duypham9895/docker-react yarn test --coverage
