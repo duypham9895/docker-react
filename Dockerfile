@@ -6,4 +6,5 @@ COPY . .
 RUN yarn build
 
 FROM nginx:1.23.2-alpine
+EXPOSE 80
 COPY --from=builder /usr/app/dist /usr/share/nginx/html
